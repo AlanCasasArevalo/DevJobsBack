@@ -1,4 +1,5 @@
 const express = require('express');
+const homeController = require("../controllers/homeController");
 const router = express.Router();
 
 module.exports = () => {
@@ -9,6 +10,10 @@ module.exports = () => {
            message: 'Todo ok'
        })
     });
+
+    router.get('/home',
+        homeController.showJobs
+    );
 
     return router
 };
