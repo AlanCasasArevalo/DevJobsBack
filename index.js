@@ -1,13 +1,14 @@
 const express = require('express');
+const path = require('path');
+const router = require('./routes');
 
 const app = express();
 
-app.use('/', (req, res) => {
-    res.status(200).json({
-        ok: true,
-        message: 'Todo ok'
-    })
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(4000);
+app.use('/',
+    router()
+);
+
+app.listen(5000);
 
