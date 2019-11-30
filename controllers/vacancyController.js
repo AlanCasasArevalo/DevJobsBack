@@ -6,6 +6,7 @@ exports.newVacancyForm = (req, res) => {
         message: 'Todo desde vacancy'
     })
 };
+
 exports.addNewVacancy = async (req, res) => {
     const vacancyBody = await req.body;
     if (vacancyBody && typeof vacancyBody !== 'undefined') {
@@ -34,6 +35,23 @@ exports.addNewVacancy = async (req, res) => {
         res.status(400).json({
             ok: false,
             message: 'No ha formado bien los datos de envio del cuerpo de la peticion'
+        })
+    }
+};
+
+exports.showVacancy = async (req, res, next) => {
+    const vacancy = await Vacancy.findOne({ url: req.params.url });
+    if (!vacancy) return  next();
+    if (vacancy && typeof vacancy !== 'undefined'){
+        res.status(200).json({
+            ok: true,
+            message: 'Todo desde URL',
+            vacancy
+        })
+    } else {
+        res.status(500).json({
+            ok: false,
+            message: 'No se pudo crear este registro en la base de datos'
         })
     }
 };

@@ -20,6 +20,14 @@ module.exports = () => {
         vacancyController.newVacancyForm
     );
 
+    router.get('/vacancies/:url',
+        vacancyController.showVacancy
+    );
+
+
+
+
+    //Security paths
     router.post('/vacancies/new',
         vacancyController.addNewVacancy
     );
