@@ -1,6 +1,7 @@
 const express = require('express');
 const homeController = require("../controllers/homeController");
 const vacancyController = require("../controllers/vacancyController");
+const usersAccountController = require("../controllers/usersAccountController");
 const router = express.Router();
 
 module.exports = () => {
@@ -34,6 +35,10 @@ module.exports = () => {
 
     router.post('/vacancies/edit/:url',
         vacancyController.editVacancy
+    );
+
+    router.post('/usersAccount/creation-account',
+        usersAccountController.userCreation
     );
 
     //Security paths
