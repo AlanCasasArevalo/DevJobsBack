@@ -20,18 +20,23 @@ module.exports = () => {
         vacancyController.newVacancyForm
     );
 
-    router.get('/vacancies/:url',
-        vacancyController.showVacancy
-    );
-
-
-
-
-    //Security paths
     router.post('/vacancies/new',
         vacancyController.addNewVacancy
     );
 
+    router.get('/vacancies/:url',
+        vacancyController.showVacancy
+    );
+
+    router.get('/vacancies/edit/:url',
+        vacancyController.formEditVacancy
+    );
+
+    router.post('/vacancies/edit/:url',
+        vacancyController.editVacancy
+    );
+
+    //Security paths
     router.get('*', async (req, res) => {
         res.status(404).json({
             result: false,
@@ -88,7 +93,7 @@ module.exports = () => {
             message: 'No existe esa direccion'
         })
     });
-    
+
     router.patch('*', async (req, res) => {
         res.status(404).json({
             ok: false,

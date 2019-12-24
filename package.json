@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "latest",
     "connect-mongo": "^3.0.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",
@@ -18,8 +19,7 @@
     "express-session": "^1.16.2",
     "mongoose": "^5.3.7",
     "shortid": "^2.2.14",
-    "slug": "^1.1.0",
-    "body-parser": "latest"
+    "slug": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
