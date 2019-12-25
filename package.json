@@ -18,6 +18,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2",
+    "express-validator": "^6.3.0",
     "mongoose": "^5.3.7",
     "shortid": "^2.2.14",
     "slug": "^1.1.0"

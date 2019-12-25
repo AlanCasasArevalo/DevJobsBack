@@ -38,6 +38,7 @@ module.exports = () => {
     );
 
     router.post('/usersAccount/creation-account',
+        usersAccountController.registerValidation,
         usersAccountController.userCreation
     );
 
